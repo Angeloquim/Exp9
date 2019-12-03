@@ -15,4 +15,6 @@ grades4=pd.DataFrame(data4,columns=['Student','ESAT'])
 merge=pd.merge (grades1,grades2,how='right',on='Student')
 merge1=pd.merge (merge,grades3,how='right',on='Student')
 mergefinal=pd.merge (merge1,grades4,how='right',on='Student')
-mergefinale=pd.melt(mergefinal)
+mergelong=pd.melt(mergefinal,id_vars = 'Student', 
+                  var_name = 'Subject', 
+                  value_name='Grades')
